@@ -11,7 +11,7 @@ function onDeviceReady()
 
         alert("AAA");
 
-        jQuery("#DebugMessage").text("Hi Mom!");
+        $("#DebugMessage").text("Hi Mom!");
 
         alert("BBB");
 
@@ -20,6 +20,8 @@ function onDeviceReady()
     }
 
 }
+
+
 //jQuery
 //    (
 //        function ()
