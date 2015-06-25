@@ -21,4 +21,8 @@
     <!-- Third party plugins -->
 
 
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.FileUtils" />
+    </feature>
+
 </widget>

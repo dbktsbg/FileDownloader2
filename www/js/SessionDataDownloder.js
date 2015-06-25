@@ -22,14 +22,19 @@ SessionDataDownloader =
                 var DataStore = cordova.file.dataDirectory;
                 var FileName = "Ses" + SessionKey + "Slide1.JPG";
 
+                //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, onError);
+
                 alert("DownloadFile( " + SlideImageFileURI + ", " + DataStore + FileName + " )");
 
                 self.DownloadFile
                         (
                             SlideImageFileURI,
                             DataStore + FileName,
-                            function () { alert("Success!") },
-                            function () { alert("ERROR") }
+                            function ()
+                            {
+                                window.resolveLocalFileSystemURI(DataStore + FileName, alert("File exists at:" + DataStore + FileName), alert("File doe NOT exists at:" + DataStore + FileName));
+                            },
+                            function () { alert("DownloadFile() ERROR") }
                         );
 
                 } catch (e) {
