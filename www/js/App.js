@@ -7,11 +7,17 @@ function onBodyLoad()
 
 function onDeviceReady()
 {
-    alert("AAA");
+    try {
 
-    jQuery("#DebugMessage").text("Hi Mom!");
+        alert("AAA");
 
-    alert("BBB");
+        jQuery("#DebugMessage").text("Hi Mom!");
+
+        alert("BBB");
+
+    } catch (e) {
+        alert(e.message);
+    }
 
 }
 //jQuery
