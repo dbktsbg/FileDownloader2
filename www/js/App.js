@@ -14,6 +14,8 @@ function onDeviceReady()
     var SessionKey = "156373";
     var SlideCount = 1;
 
+    alert("DownloadSessionSlides( " + SessionKey + ", " + SlideCount + " )");
+
     mySessionDataDownloader.DownloadSessionSlides(SessionKey, SlideCount);
     
 }

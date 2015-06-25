@@ -16,12 +16,16 @@ SessionDataDownloader =
                     SlideCount
                 )
             {
+                try {
+
                 var SlideImageFileURI = encodeURI("http://cloudvotepro1.blob.core.windows.net/sessions/v1/Sub069674/App20/Tem/Ses156373/Res/Slide5.JPG");
 
                 var DataStore = cordova.file.dataDirectory;
-                alert(DataStore);
+                    alert("DataStore=" + DataStore);
 
                 var FileName = "Ses" + SessionKey + "Slide1.JPG";
+
+                alert("DownloadFile( " + SlideImageFileURI + ", " + DataStore + FileName + " )");
 
                 self.DownloadFile
                         (
@@ -30,6 +34,10 @@ SessionDataDownloader =
                             alert("Success!"),
                             alert("ERROR")
                         );
+
+                } catch (e) {
+                    alert(e.message)
+                }
             }
 
         self.DownloadFile = 
@@ -41,6 +49,7 @@ SessionDataDownloader =
                     ErrorCallback
                 )
             {
+                try {
 
                 var myFileTransfer = new FileTransfer();
 
@@ -53,6 +62,9 @@ SessionDataDownloader =
                         ErrorCallback
                     );
 
+                } catch (e) {
+                    alert(e.message)
+                }
             }
 
     }
