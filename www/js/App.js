@@ -1,4 +1,19 @@
 
+function onBodyLoad()
+{
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+
+function onDeviceReady()
+{
+    alert("AAA");
+
+    jQuery("#DebugMessage").text("Hi Mom!");
+
+    alert("BBB");
+
+}
 //jQuery
 //    (
 //        function ()
@@ -6,43 +21,38 @@
 
             // ========== App Init ==========
 
-            var app = 
-                {
-                    initilaize: 
-                        function()
-                        {
-                            this.bindEvents();
-                        },
+            //var app = 
+            //    {
+            //        initilaize: 
+            //            function()
+            //            {
+            //                this.bindEvents();
+            //            },
 
-                    bindEvents:
-                        function()
-                        {
-                            document.addEventListener("deviceready", this.onDeviceReady, false);
-                        }
-                    ,
+            //        bindEvents:
+            //            function()
+            //            {
+            //                document.addEventListener("deviceready", this.onDeviceReady, false);
+            //            }
+            //        ,
 
-                    onDeviceReady:
-                        function ()
-                        {
-                            app.receivedEvent('deviceready');
-                        },
+            //        onDeviceReady:
+            //            function ()
+            //            {
+            //                app.receivedEvent('deviceready');
+            //            },
 
-                    receivedEvent:
-                        function (id)
-                        {
-                            alert("receivedEvent");
-                        }
-                }
+            //        receivedEvent:
+            //            function (id)
+            //            {
+            //                alert("receivedEvent");
+            //            }
+            //    }
 
             // ========== Main ==========
 
-            app.initialize();
+//            app.initialize();
 
-            alert("AAA");
-
-            jQuery("#DebugMessage").text("Hi Mom!");
-
-            alert("Hi Mom!");
 
 //        }
 //
