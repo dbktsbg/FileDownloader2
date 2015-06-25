@@ -1,8 +1,8 @@
 
-jQuery
-    (
-        function ()
-        {
+//jQuery
+//    (
+//        function ()
+//        {
 
             // ========== App Init ==========
 
@@ -38,11 +38,15 @@ jQuery
 
             app.initialize();
 
+            alert("AAA");
+
             jQuery("#DebugMessage").text("Hi Mom!");
 
             alert("Hi Mom!");
-        }
-    );
+
+//        }
+//
+//);
 
 
 //function onDeviceReady()
