@@ -40,6 +40,7 @@ jQuery
 
             jQuery("#DebugMessage").text("Hi Mom!");
 
+            alert("Hi Mom!");
         }
     );
 
