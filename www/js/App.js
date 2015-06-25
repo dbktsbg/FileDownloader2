@@ -1,67 +1,142 @@
 
 jQuery
-(
-    function ()
-    {
-        // ---------- App class ----------
-        var app =
+    (
+        function ()
         {
-            initialize: function () {
-                this.bindEvents();
-            },
 
-            bindEvents: function () {
-                document.addEventListener('deviceready', this.onDeviceReady, false);
-            },
+            // ========== App Init ==========
 
-            onDeviceReady: function ()
-            {
-                // app.receivedEvent('deviceready');
-                alert("onDeviceReady");
-            },
+            var app = 
+                {
+                    initilaize: 
+                        function()
+                        {
+                            this.bindEvents();
+                        },
 
-            //receivedEvent: function (id) {
-            //    var parentElement = document.getElementById(id);
-            //    var listeningElement = parentElement.querySelector('.listening');
-            //    var receivedElement = parentElement.querySelector('.received');
+                    bindEvents:
+                        function()
+                        {
+                            document.addEventListener("deviceready", this.onDeviceReady, false);
+                        }
+                    ,
 
-            //    listeningElement.setAttribute('style', 'display:none;');
-            //    receivedElement.setAttribute('style', 'display:block;');
+                    onDeviceReady:
+                        function ()
+                        {
+                            app.receivedEvent('deviceready');
+                        },
 
-            //    //console.log('Received Event: ' + id);
-            //}
+                    receivedEvent:
+                        function (id)
+                        {
+                            alert("receivedEvent");
+                        }
+                }
+
+            // ========== Main ==========
+
+            app.initialize();
+
+            jQuery("#DebugMessage").text("Hi Mom!");
 
         }
+    );
 
-        // ========== Main =========
 
-        app.initialize();
+//function onDeviceReady()
+//{
 
-        try {
+    // ========== Main =========
 
-            var mySessionDataDownloader = new SessionDataDownloader();
+    //try {
 
-            var SessionKey = "156373";
-            var SlideCount = 1;
+    //    var mySessionDataDownloader = new SessionDataDownloader();
 
-            alert("DownloadSessionSlides( " + SessionKey + ", " + SlideCount + " )");
+    //    var SessionKey = "156373";
+    //    var SlideCount = 1;
 
-            //var DownloadedImageElement = document.querySelector("#DownloadedImage");
+    //    alert("DownloadSessionSlides( " + SessionKey + ", " + SlideCount + " )");
 
-            var DownloadedImageFile =
-                mySessionDataDownloader.DownloadSessionSlides(SessionKey, SlideCount);
+    //    //var DownloadedImageElement = document.querySelector("#DownloadedImage");
 
-            alert("DownloadedImageFile=" + DownloadedImageFile);
-            //document["DownloadedImage"].src = DownloadedImageFile;
+    //    var DownloadedImageFile = 
+    //        mySessionDataDownloader.DownloadSessionSlides(SessionKey, SlideCount);
 
-            jQuery("#DownloadedImage").attr("src", DownloadedImageFile);
+    //    alert("DownloadedImageFile=" + DownloadedImageFile);
+    //    document["DownloadedImage"].src = DownloadedImageFile;
 
-        } catch (e) {
-            alert(e.message)
-        }
+    //} catch (e) {
+    //    alert(e.message)
+    //}
 
-    }
-);
+//}
+
+
+//jQuery
+//(
+//    function ()
+//    {
+//        // ---------- App class ----------
+//        var app =
+//        {
+//            initialize: function () {
+//                alert("app.initialize()");
+//                this.bindEvents();
+//            },
+
+//            bindEvents: function () {
+//                document.addEventListener('deviceready', this.onDeviceReady, false);
+//            },
+
+//            onDeviceReady: function ()
+//            {
+//                // app.receivedEvent('deviceready');
+//                alert("onDeviceReady");
+//            },
+
+//            //receivedEvent: function (id) {
+//            //    var parentElement = document.getElementById(id);
+//            //    var listeningElement = parentElement.querySelector('.listening');
+//            //    var receivedElement = parentElement.querySelector('.received');
+
+//            //    listeningElement.setAttribute('style', 'display:none;');
+//            //    receivedElement.setAttribute('style', 'display:block;');
+
+//            //    //console.log('Received Event: ' + id);
+//            //}
+
+//        }
+
+//        // ========== Main =========
+
+//        app.initialize();
+
+//        try {
+
+//            var mySessionDataDownloader = new SessionDataDownloader();
+
+//            var SessionKey = "156373";
+//            var SlideCount = 1;
+
+//            alert("DownloadSessionSlides( " + SessionKey + ", " + SlideCount + " )");
+
+//            //var DownloadedImageElement = document.querySelector("#DownloadedImage");
+
+//            var DownloadedImageFile =
+//                mySessionDataDownloader.DownloadSessionSlides(SessionKey, SlideCount);
+
+//            alert("DownloadedImageFile=" + DownloadedImageFile);
+//            //document["DownloadedImage"].src = DownloadedImageFile;
+
+//            jQuery("#DownloadedImage").attr("src", DownloadedImageFile);
+
+//        } catch (e) {
+//            alert(e.message)
+//        }
+
+//    }
+//);
 
 
 //function onBodyLoad()
