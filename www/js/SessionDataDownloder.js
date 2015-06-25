@@ -28,8 +28,8 @@ SessionDataDownloader =
                         (
                             SlideImageFileURI,
                             DataStore + FileName,
-                            alert("Success!"),
-                            alert("ERROR")
+                            function () { alert("Success!") },
+                            function () { alert("ERROR") }
                         );
 
                 } catch (e) {
@@ -53,8 +53,8 @@ SessionDataDownloader =
                 myFileTransfer
                     .download
                     (
-                        targetSourceFileURL,
-                        targetDestinationFileFullPathName,
+                        SourceFileURL,
+                        DestinationFileFullPathName,
                         SuccessCallback,
                         ErrorCallback
                     );
