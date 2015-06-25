@@ -19,10 +19,7 @@ SessionDataDownloader =
                 try {
 
                 var SlideImageFileURI = encodeURI("http://cloudvotepro1.blob.core.windows.net/sessions/v1/Sub069674/App20/Tem/Ses156373/Res/Slide5.JPG");
-
                 var DataStore = cordova.file.dataDirectory;
-                    alert("DataStore=" + DataStore);
-
                 var FileName = "Ses" + SessionKey + "Slide1.JPG";
 
                 alert("DownloadFile( " + SlideImageFileURI + ", " + DataStore + FileName + " )");

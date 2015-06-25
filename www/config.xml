@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <widget
-  xmlns = "http://www.w3.org/ns/widgets"
-  xmlns:gap = "http://phonegap.com/ns/1.0"
-  id = "com.dbktsbg.filedownloader2"
-  version = "1.0.0">
+    xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id = "com.dbktsbg.filedownloader2"
+    version = "1.0.0">
   
     <name>File Downloader</name>
 
     <description>
         Sample application.
     </description>
+
+    <!-- Plugins -->
+
+    <!-- Core plugins -->
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+
+    <!-- Third party plugins -->
+
 
 </widget>
