@@ -16,7 +16,12 @@ function onDeviceReady()
 
     alert("DownloadSessionSlides( " + SessionKey + ", " + SlideCount + " )");
 
-    mySessionDataDownloader.DownloadSessionSlides(SessionKey, SlideCount);
+    //var DownloadedImageElement = document.querySelector("#DownloadedImage");
+
+    var DownloadedImageFile = 
+        mySessionDataDownloader.DownloadSessionSlides(SessionKey, SlideCount);
+
+    document["DownloadedImage"].src = DownloadedImageFile;
     
 }
 
