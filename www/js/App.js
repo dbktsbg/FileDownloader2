@@ -9,7 +9,7 @@ function onDeviceReady()
     
     // ========== Main =========
 
-    var mySessionDataDownloader = new SessionDataDownloader();
+    //var mySessionDataDownloader = new SessionDataDownloader();
 
     alert("XXX");
     
