@@ -1,17 +1,29 @@
-var app =
-    {
-        initialize: function ()
-        {
-            try {
-                var self = this;
-                $("#DebugMessage").text("jQuery is ready...");
-            } catch (e) {
-                alert(e.message);
-            } 
-        }
-    };
 
-app.initialize();
+jQuery
+    (
+        function ()
+        {
+            jQuery("#DebugMessage").text("jQuery is ready...");
+        }
+    );
+
+
+// =====================================================================
+
+//var app =
+//    {
+//        initialize: function ()
+//        {
+//            try {
+//                var self = this;
+//                $("#DebugMessage").text("jQuery is ready...");
+//            } catch (e) {
+//                alert(e.message);
+//            } 
+//        }
+//    };
+
+//app.initialize();
 
 // =====================================================================
 
@@ -141,7 +153,7 @@ app.initialize();
 
 //}
 
-
+// =====================================================================
 //jQuery
 //(
 //    function ()
@@ -207,7 +219,7 @@ app.initialize();
 //    }
 //);
 
-
+// =====================================================================
 //function onBodyLoad()
 //{
 //    document.addEventListener("deviceready", onDeviceReady, false);
