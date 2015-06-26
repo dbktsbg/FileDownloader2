@@ -1,19 +1,32 @@
 
+var jQueryReady = false;
+var DeviceReady = false;
+
+
+jQuery
+    (
+        function ()
+        {
+            jQueryReady = true;
+            CheckDeviceAndJQueryReady();
+        }
+    );
+
 function onBodyLoad()
 {
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener("deviceready", CheckDeviceAndJQueryReady, false);
 }
 
 
-function onDeviceReady()
+function CheckDeviceAndJQueryReady()
 {
     try {
 
-        alert("AAA");
+        alert("jQueryReady=" + jQueryReady + " ... " + "DeviceReady=" + DeviceReady);
 
-        $("#DebugMessage").text("Hi Mom!");
+        jQuery("#DebugMessage").text("Hi Mom!");
 
-        alert("BBB");
+        alert("It Works!");
 
     } catch (e) {
         alert(e.message);
