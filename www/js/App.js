@@ -2,8 +2,12 @@ var app =
     {
         initialize: function ()
         {
-            var self = this;
-            $("#DebugMessage").text("jQuery is ready...");
+            try {
+                var self = this;
+                $("#DebugMessage").text("jQuery is ready...");
+            } catch (e) {
+                alert(e.message);
+            } 
         }
     };
 
