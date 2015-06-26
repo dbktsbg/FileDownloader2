@@ -1,57 +1,69 @@
-
-var jQueryReady = false;
-var DeviceReady = false;
-
-
-jQuery
-    (
-        function ()
+var app =
+    {
+        initialize: function ()
         {
-            try {
-                jQueryReady = true;
-                CheckDeviceAndJQueryReady();
-            } catch (e) {
-                alert(e.message);
-            }
+            var self = this;
+            $("#DebugMessage").text("jQuery is ready...");
         }
-    );
+    };
 
-function onBodyLoad()
-{
-    try {
-        DeviceReady = true;
-        document.addEventListener("deviceready", CheckDeviceAndJQueryReady, false);
-    } catch (e) {
-        alert(e.message);
-    }
-}
+app.initialize();
+
+// =====================================================================
+
+//var jQueryReady = false;
+//var DeviceReady = false;
 
 
-function CheckDeviceAndJQueryReady()
-{
-    try {
+//jQuery
+//    (
+//        function ()
+//        {
+//            try {
+//                jQueryReady = true;
+//                CheckDeviceAndJQueryReady();
+//            } catch (e) {
+//                alert(e.message);
+//            }
+//        }
+//    );
 
-        alert("jQueryReady=" + jQueryReady + " ... " + "DeviceReady=" + DeviceReady);
-
-        if (jQueryReady == true) {
-            jQuery("#DebugMessage").text("jQuery is ready...");
-        }
-
-        if (DeviceReady == true)
-        {
-            if (jQueryReady == true)
-            {
-                alert("ALL READY!");
-            }
-        }        
-
-    } catch (e) {
-        alert(e.message);
-    }
-
-}
+//function onBodyLoad()
+//{
+//    try {
+//        DeviceReady = true;
+//        document.addEventListener("deviceready", CheckDeviceAndJQueryReady, false);
+//    } catch (e) {
+//        alert(e.message);
+//    }
+//}
 
 
+//function CheckDeviceAndJQueryReady()
+//{
+//    try {
+
+//        alert("jQueryReady=" + jQueryReady + " ... " + "DeviceReady=" + DeviceReady);
+
+//        if (jQueryReady == true) {
+//            jQuery("#DebugMessage").text("jQuery is ready...");
+//        }
+
+//        if (DeviceReady == true)
+//        {
+//            if (jQueryReady == true)
+//            {
+//                alert("ALL READY!");
+//            }
+//        }        
+
+//    } catch (e) {
+//        alert(e.message);
+//    }
+
+//}
+
+// =====================================================================
 //jQuery
 //    (
 //        function ()
