@@ -4,7 +4,7 @@ SessionDataDownloader =
     {
         // ========== Properties ==========
         var self = this;
-        self.DataStore = new object(0);
+        self.DataStore = new Object(0);
 
         // ========== Event Handlers =========
 
