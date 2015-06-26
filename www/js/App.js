@@ -1,3 +1,8 @@
+// ......................................................................................................................................
+// jQuery will wait for document ready event (required for Cordova code)...
+//
+// Note:  jquery's .js file only was NOT found/loaded if in a subfolder called "/js/jquery/" !!!
+// ......................................................................................................................................
 
 jQuery(document)
     .ready
@@ -5,12 +10,27 @@ jQuery(document)
         function ()
         {
             // ========== Main =========
-            try {
-                jQuery("#DebugMessage").text("jQuery is ready...");
-            } catch (e) {
+            try
+            {
+                 var mySessionDataDownloader = new SessionDataDownloader();
+
+                 var SessionKey = "156373";
+                 var SlideCount = 1;
+
+                alert("DownloadSessionSlides( " + SessionKey + ", " + SlideCount + " )");
+
+                var DownloadedImageFile =
+                    mySessionDataDownloader.DownloadSessionSlides(SessionKey, SlideCount);
+
+                alert("DownloadedImageFile=" + DownloadedImageFile);
+                jQuery("#DebugMessage").text("DownloadedImageFile=" + DownloadedImageFile);
+                jQuery("#DownloadedImage").attr("src", DownloadedImageFile);
+
+            }
+            catch (e)
+            {
                 alert(e.message);
             }
-            alert("End of Main");
         }
     );
 
