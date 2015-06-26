@@ -3,7 +3,11 @@ jQuery
     (
         function ()
         {
-            jQuery("#DebugMessage").text("jQuery is ready...");
+            try {
+                jQuery("#DebugMessage").text("jQuery is ready...");
+            } catch (e) {
+                alert(e.message);
+            }
         }
     );
 
