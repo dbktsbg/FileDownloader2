@@ -39,7 +39,7 @@ function CheckDeviceAndJQueryReady()
 
         if (DeviceReady == true)
         {
-            if (DeviceReady==true)
+            if (jQueryReady == true)
             {
                 alert("ALL READY!");
             }
