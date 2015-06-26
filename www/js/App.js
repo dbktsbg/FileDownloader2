@@ -3,18 +3,21 @@
 
 alert("AAA");
 
-$(
-        function ()
-        {
-            // ========== Main =========
-            try {
-                $("#DebugMessage").text("jQuery is ready...");
-            } catch (e) {
-                alert(e.message);
+try {
+    $(
+            function () {
+                // ========== Main =========
+                try {
+                    $("#DebugMessage").text("jQuery is ready...");
+                } catch (e) {
+                    alert(e.message);
+                }
+                alert("End of Main");
             }
-            alert("End of Main");
-        }
-    );
+        );
+} catch (e) {
+    alert(e.message);
+}
 
 alert("BBB");
 
