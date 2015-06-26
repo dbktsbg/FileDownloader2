@@ -7,14 +7,23 @@ jQuery
     (
         function ()
         {
-            jQueryReady = true;
-            CheckDeviceAndJQueryReady();
+            try {
+                jQueryReady = true;
+                CheckDeviceAndJQueryReady();
+            } catch (e) {
+                alert(e.message);
+            }
         }
     );
 
 function onBodyLoad()
 {
-    document.addEventListener("deviceready", CheckDeviceAndJQueryReady, false);
+    try {
+        DeviceReady = true;
+        document.addEventListener("deviceready", CheckDeviceAndJQueryReady, false);
+    } catch (e) {
+        alert(e.message);
+    }
 }
 
 
