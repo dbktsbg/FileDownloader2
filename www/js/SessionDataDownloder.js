@@ -4,10 +4,36 @@ SessionDataDownloader =
     {
         // ========== Properties ==========
         var self = this;
+        self.DataStore = new object(0);
 
         // ========== Event Handlers =========
 
         // ========== Methods =========
+
+        self.Initialize =
+            function ()
+            {
+                window
+                    .requestFileSystem
+                    (
+                        LocalFileSystem.PERSISTENT,
+                        0,
+                        self.OnRequestFileSystemSucceeded,
+                        self.OnRequestFileSystemFailed
+                    );
+            }
+
+        self.OnRequestFileSystemSucceeded =
+            function ()
+            {
+                self.DataStore = cordova.file.dataDirectory;
+            }
+
+        self.OnRequestFileSystemFailed =
+            function ()
+            {
+                alert("Request File System Failed");
+            }
 
         self.DownloadSessionSlides =
             function 
@@ -19,20 +45,18 @@ SessionDataDownloader =
                 try {
 
                 var SlideImageFileURI = encodeURI("http://cloudvotepro1.blob.core.windows.net/sessions/v1/Sub069674/App20/Tem/Ses156373/Res/Slide5.JPG");
-                var DataStore = cordova.file.dataDirectory;
+                //var DataStore = cordova.file.dataDirectory;
                 var FileName = "Ses" + SessionKey + "Slide1.JPG";
-
-                //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, onError);
-
-                alert("DownloadFile( " + SlideImageFileURI + ", " + DataStore + FileName + " )");
+                
+                alert("DownloadFile( " + SlideImageFileURI + ", " + self.DataStore + FileName + " )");
 
                 self.DownloadFile
                         (
                             SlideImageFileURI,
-                            DataStore + FileName,
+                            self.DataStore + FileName,
                             function ()
                             {
-                                window.resolveLocalFileSystemURI(DataStore + FileName, alert("File exists at:" + DataStore + FileName), alert("File doe NOT exists at:" + DataStore + FileName));
+                                window.resolveLocalFileSystemURI(self.DataStore + FileName, alert("File exists at:" + self.DataStore + FileName), alert("File doe NOT exists at:" + self.DataStore + FileName));
                             },
                             function () { alert("DownloadFile() ERROR") }
                         );
@@ -68,6 +92,11 @@ SessionDataDownloader =
                     alert(e.message)
                 }
             }
+
+
+        // ---------- Constructor ----------
+        
+        self.Initialize();
 
     }
 
