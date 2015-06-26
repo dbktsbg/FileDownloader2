@@ -4,11 +4,12 @@
 alert("AAA");
 
 try {
-    $(
+
+    jQuery(
             function () {
                 // ========== Main =========
                 try {
-                    $("#DebugMessage").text("jQuery is ready...");
+                    jQuery("#DebugMessage").text("jQuery is ready...");
                 } catch (e) {
                     alert(e.message);
                 }
