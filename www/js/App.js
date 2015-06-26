@@ -1,26 +1,43 @@
 
+jQuery(document)
+    .ready
+    (
+        function ()
+        {
+            // ========== Main =========
+            try {
+                jQuery("#DebugMessage").text("jQuery is ready...");
+            } catch (e) {
+                alert(e.message);
+            }
+            alert("End of Main");
+        }
+    );
+
+
+
 // =====================================================================
 
-alert("AAA");
+//alert("AAA");
 
-try {
+//try {
 
-    jQuery(
-            function () {
-                // ========== Main =========
-                try {
-                    jQuery("#DebugMessage").text("jQuery is ready...");
-                } catch (e) {
-                    alert(e.message);
-                }
-                alert("End of Main");
-            }
-        );
-} catch (e) {
-    alert(e.message);
-}
+//    jQuery(
+//            function () {
+//                // ========== Main =========
+//                try {
+//                    jQuery("#DebugMessage").text("jQuery is ready...");
+//                } catch (e) {
+//                    alert(e.message);
+//                }
+//                alert("End of Main");
+//            }
+//        );
+//} catch (e) {
+//    alert(e.message);
+//}
 
-alert("BBB");
+//alert("BBB");
 
 // =====================================================================
 
