@@ -3,11 +3,13 @@ jQuery
     (
         function ()
         {
+            // ========== Main =========
             try {
                 jQuery("#DebugMessage").text("jQuery is ready...");
             } catch (e) {
                 alert(e.message);
             }
+            alert("End of Main");
         }
     );
 
