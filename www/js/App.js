@@ -33,9 +33,17 @@ function CheckDeviceAndJQueryReady()
 
         alert("jQueryReady=" + jQueryReady + " ... " + "DeviceReady=" + DeviceReady);
 
-        jQuery("#DebugMessage").text("Hi Mom!");
+        if (jQueryReady == true) {
+            jQuery("#DebugMessage").text("jQuery is ready...");
+        }
 
-        alert("It Works!");
+        if (DeviceReady == true)
+        {
+            if (DeviceReady==true)
+            {
+                alert("ALL READY!");
+            }
+        }        
 
     } catch (e) {
         alert(e.message);
